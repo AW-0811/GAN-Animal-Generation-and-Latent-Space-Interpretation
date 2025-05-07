@@ -101,25 +101,25 @@ This guide outlines the correct execution flow for both GAN models.
 ## **Code Structure**
 
 ### **Conditional GAN**
-- `ACGAN.py` — Model training  
-- `Generateimages.py` — Image generation using saved weights  
-- `interpolate.py` — Latent vector interpolation  
-- `Images over epochs/` — Checkpointed images during training  
-- `Interpolation results/` — Best interpolation samples  
-- `Plots/` — Loss curves and comparison plots  
-- `Generated images and vectors/` — Image–vector pairs  
-- Saved models: `epoch_80.pth` and `epoch_99.pth`
+- `ACGAN.py` — Model training script 
+- `Generateimages.py` — Image generation script using saved weights  
+- `interpolate.py` — Latent vector interpolation script
+- `Images over epochs/` — Checkpointed images from training runs I conducted 
+- `Interpolation results/` — Some of the better interpolation samples from my testing
+- `Plots/` — Loss curves and comparison plots for the model I trained
+- `Generated images and vectors/` — Some Image–vector pairs I generated with the epoch 80 generator  
+- Saved models: `epoch_80.pth` and `epoch_99.pth` (I personally found better generalization at epoch 80)
 
 ---
 
 ### **Vanilla GAN**
-- `Unconditional GAN.py` — Model training  
-- `save images and vectors.py` — Image generation with vector saving  
-- `latent space exploration.py` — Interpolation across generated vectors  
-- `Fake images over epochs/` — Checkpointed images  
-- `Interpolation examples/` — Latent traversal outputs  
-- `Generated images/` — Final outputs  
-- `generated vectors/` — Stored latent vectors  
+- `Unconditional GAN.py` — Model training script
+- `save images and vectors.py` — Image generation script with vector saving  
+- `latent space exploration.py` — Script for Interpolation across generated vectors  
+- `Fake images over epochs/` — Checkpointed images from my training run 
+- `Interpolation examples/` — Latent traversal outputs for some vectors that I personally found looked the best
+- `Generated images/` — Generated images from the generation script
+- `generated vectors/` — Stored latent vectors from the generation script
 - Saved models: `epoch_99.pth`
 
 ---
