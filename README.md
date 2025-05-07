@@ -124,7 +124,7 @@ This guide outlines the correct execution flow for both GAN models.
 
 ---
 
-**Need help setting up or got any queries related to this project?** Feel free to reach out to me via GitHub issues or discussions.
+**Need help setting up or got any queries related to this project?** Feel free to reach out to me via GitHub issues.
 
 
 
