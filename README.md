@@ -1,3 +1,9 @@
+# **GAN Animal Generation and Latent Space Interpretation**
+
+A dual-approach GAN project exploring both Conditional (ACGAN) and Unconditional architectures to generate realistic animal faces, while analyzing the effects of class conditioning and latent space structure.
+
+---
+
 ## **Table of Contents**
 - [Project Overview](#project-overview)
 - [Installation](#installation)
@@ -9,39 +15,18 @@
 ---
 
 ## **Project Overview**
-This project explores both Conditional (ACGAN) and Unconditional GAN architectures to generate realistic animal images using the [AFHQv2 512×512 animal faces dataset](https://www.kaggle.com/datasets/dimensi0n/afhq-512). The conditional model allows for class-controlled image generation, while the unconditional counterpart serves as a baseline of sorts, to evaluate the performance of a GAN without class guidance. Together, they provide a holistic view of how class conditioning and latent space structure affect output quality and interpretability of the latent space.
 
----
+This project implements both **Conditional GAN (ACGAN)** and **Vanilla (Unconditional) GAN** architectures for generating realistic animal face images using the [AFHQv2 512×512 dataset](https://www.kaggle.com/datasets/dimensi0n/afhq-512).  
+- The **Conditional GAN** allows class-controlled generation.
+- The **Vanilla GAN** serves as a baseline without label guidance.
 
-## **Code Structure**
-
-### **Conditional GAN**
-1. `ACGAN.py` — for training the model  
-2. `Generateimages.py` — generates images by loading the trained generator through the `.pth` file  
-3. `interpolate.py` — for latent space exploration  
-4. `Images over epochs` — folder showcasing generated images throughout checkpoints during training  
-5. `Interpolation results` — folder containing some of the better interpolation results  
-6. `Plots` — folder for loss graphs and image comparisons  
-7. `Generated images and vectors` — folder containing generated images along with their corresponding latent vectors  
-8. Saved model weights for the discriminator and generator at epoch 80 and 99 (generalization at epoch 80 found to be better)
-
----
-
-### **Vanilla GAN**
-1. `Unconditional GAN.py` — for training the model  
-2. `save images and vectors.py` — generates images by loading the trained generator through the `.pth` file  
-3. `latent space exploration.py` — for latent space exploration  
-4. `Fake images over epochs` — folder showcasing generated images throughout checkpoints during training  
-5. `Interpolation examples` — folder containing the interpolation results  
-6. `Generated images` — folder containing generated images  
-7. `generated vectors` — folder containing the generated vectors  
-8. Saved model weights for the discriminator and generator at epoch 99
+Together, these models provide insight into how class conditioning impacts image quality, training stability, and interpretability of the latent space.
 
 ---
 
 ## **Installation**
 
-Follow the steps below to set up the project on your local machine:
+To run this project locally:
 
 ```bash
 # 1. Clone the repository
@@ -58,66 +43,88 @@ pip install --upgrade pip
 # 4. Install dependencies
 pip install -r requirements.txt
 ```
-# **Usage Guide**
 
-This guide outlines the correct order of executing scripts in the **GAN Animal Generation and Latent Space Interpretation** project for both Conditional and Unconditional GANs. **PLEASE NOTE** that file paths will have to be modified to the location of your dataset/model weights.
+> Ensure you have GPU support (CUDA) with your PyTorch installation for best performance. I had access to A-100 GPUs through Northwestern QUEST.
 
 ---
 
-## **Step-by-step Execution Flow**
+## **Usage Guide**
 
-### **1. Train the GAN Model**
-Start by training the model to generate checkpoints and learn image distributions.
+This guide outlines the correct execution flow for both GAN models.  
+**Note:** You may need to modify dataset and weight file paths depending on your environment.
 
-- **Conditional GAN:**
+### **Step 1: Train the GAN**
+
+- **Conditional GAN**
   ```bash
   python ACGAN.py
   ```
-
-- **Vanilla GAN:**
+- **Vanilla GAN**
   ```bash
   python "Unconditional GAN.py"
   ```
 
-> Outputs: Model weights (`.pth`), image samples across epochs, and training loss plots.
+> Outputs: `.pth` model weights, image snapshots across epochs, loss plots.
 
 ---
 
-### **2. Generate Images**
-Once training is complete, generate synthetic images and optionally save latent vectors for future interpolation.
+### **Step 2: Generate Images**
 
-- **Conditional GAN:**
+- **Conditional GAN**
   ```bash
   python Generateimages.py
   ```
-
-- **Vanilla GAN:**
+- **Vanilla GAN**
   ```bash
   python "save images and vectors.py"
   ```
 
-> Outputs: Final image samples and `.pt` files for latent vectors.
+> Outputs: Final generated images and corresponding latent vectors (`.pt` files).
 
 ---
 
-### **3. Perform Latent Space Interpolation**
-Explore how the GAN transitions between different points in the latent space.
+### **Step 3: Interpolate Latent Space**
 
-- **Conditional GAN:**
+- **Conditional GAN**
   ```bash
   python interpolate.py
   ```
-
-- **Vanilla GAN:**
+- **Vanilla GAN**
   ```bash
   python "latent space exploration.py"
   ```
 
-> Outputs: Interpolation images saved to the respective results folders.
+> Outputs: Smooth image transitions across the latent space saved to results folders.
 
 ---
 
-**Tip:** Ensure the required `.pth` model weights and `.pt` latent vectors exist before running generation or interpolation scripts.
+## **Code Structure**
+
+### **Conditional GAN**
+- `ACGAN.py` — Model training  
+- `Generateimages.py` — Image generation using saved weights  
+- `interpolate.py` — Latent vector interpolation  
+- `Images over epochs/` — Checkpointed images during training  
+- `Interpolation results/` — Best interpolation samples  
+- `Plots/` — Loss curves and comparison plots  
+- `Generated images and vectors/` — Image–vector pairs  
+- Saved models: `epoch_80.pth` and `epoch_99.pth`
+
+---
+
+### **Vanilla GAN**
+- `Unconditional GAN.py` — Model training  
+- `save images and vectors.py` — Image generation with vector saving  
+- `latent space exploration.py` — Interpolation across generated vectors  
+- `Fake images over epochs/` — Checkpointed images  
+- `Interpolation examples/` — Latent traversal outputs  
+- `Generated images/` — Final outputs  
+- `generated vectors/` — Stored latent vectors  
+- Saved models: `epoch_99.pth`
+
+---
+
+**Need help setting up or got any queries related to this project?** Feel free to reach out to me via GitHub issues or discussions.
 
 
 
