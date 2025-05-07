@@ -7,7 +7,7 @@
 ### The project has two separate folders, namely 'Vanilla GAN' and 'Conditional GAN'. The description for each folder's contents are given below:
 #### Conditional GAN:
 1. 'ACGAN.py' for training the model\
-2. 'Generateimages.py' for generating images by loading the a trained generator through the .pth file.\
+2. 'Generateimages.py' for generating images by loading the trained generator through the .pth file.\
 3. 'interpolate.py' for latent space exploration.\
 4. 'Images over epochs' folder showcasing generated images throughout checkpoints during training.\
 5. 'Interpolation results' folder containing some of the better interpolation results I generated.\
@@ -18,13 +18,15 @@
 
 #### Vanilla GAN:
 1. 'Unconditional GAN.py' for training the model\
-2. 'save images and vectors.py' for generating images by loading the a trained generator through the .pth file.\
+2. 'save images and vectors.py' for generating images by loading the trained generator through the .pth file.\
 3. 'latent space exploration.py' for latent space exploration.\
 4. 'Fake images over epochs' folder showcasing generated images throughout checkpoints during training.\
 5. 'Interpolation examples' folder containing the interpolation results.\
 6. 'Generated images' folder containing generated images.\
 7. 'generated vectors' folder containing the generated vectors.\
-8. Saved model weights for the discriminator and generator at epoch 99
+8. Saved model weights for the discriminator and generator at epoch 99.
+
+
 
 
 
