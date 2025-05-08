@@ -11,6 +11,8 @@ A dual-approach GAN project exploring both Conditional (ACGAN) and Unconditional
 - [Code Structure](#code-structure)
   - [Conditional GAN](#conditional-gan)
   - [Vanilla GAN](#vanilla-gan)
+- [Results](#results)
+
 
 ---
 
@@ -123,6 +125,51 @@ This guide outlines the correct execution flow for both GAN models.
 - Saved models: `epoch_99.pth`
 
 ---
+
+## **Results**
+
+### Generated Samples After 100 Epochs
+
+These outputs demonstrate the generation ability of each of the models post training.
+
+---
+
+#### ACGAN (Conditional GAN)
+
+![](Conditional%20GAN/Images%20over%20epochs/fake_samples_epoch_080.png)
+
+---
+
+#### DCGAN (Unconditional)
+
+![](Vanilla%20GAN/Fake%20images%20over%20epochs/fake_samples_epoch_099.png)
+
+---
+
+### Latent Space Interpolation Results
+
+We visualize the latent space behavior of different GAN models by interpolating between two latent vectors. These transitions demonstrate the model's ability to smoothly blend features and generate hybrid animals.
+
+#### ACGAN (Conditional GAN)
+
+**Interpolation 1:**  
+![](Conditional%20GAN/Interpolation%20results/interpolation_result%201.png)
+
+**Interpolation 2:**  
+![](Conditional%20GAN/Interpolation%20results/interpolation_result%203.png)
+
+---
+
+#### DCGAN (Unconditional)
+
+**Interpolation 1:**  
+![](Vanilla%20GAN/Interpolation%20examples/z_23_to_z_14.png)
+
+**Interpolation 2:**  
+![](Vanilla%20GAN/Interpolation%20examples/z_61_to_z_40.png)
+
+---
+
 
 **Need help setting up or got any queries related to this project?** Feel free to reach out to me via GitHub issues.
 
